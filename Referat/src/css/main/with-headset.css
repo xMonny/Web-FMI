@@ -1,0 +1,53 @@
+.choice {
+    display: inline-block;
+    width: 250px;
+    margin-right: 28px;
+    vertical-align: top;
+}
+
+.choice_btn {
+    background: #9ACD32 no-repeat top left;
+    color: black;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    border-radius: 11px;
+
+    width: 100%; 
+    margin-bottom: 20px;
+    border: 3px solid black;
+}
+
+.active, .choice_btn:hover {
+    background-color: #27a102;
+}
+
+.browser_logo {
+    width: 50px;
+    margin-left: -10px;
+    margin-bottom: -18px;
+    margin-top: -15px;
+}
+
+.arrow {
+    width: 20px;
+}
+
+.hidden_content {
+    overflow: hidden;
+    color: #acd1af;
+    width: 80%;
+
+    margin-left: 10px;
+    
+    
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.hidden_content > p {
+    margin-top: auto;
+    margin-left: 30px;
+    text-align: left;
+}

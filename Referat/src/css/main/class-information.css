@@ -1,0 +1,29 @@
+.information {
+    text-align: justify;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    width: 75%;
+    color: #acd1af;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.information > h3 {
+    font-style: normal;
+    color: #9ACD32;
+    border-bottom: 2px solid #9ACD32;
+    font-style: italic;
+}
+
+.information > p {
+    margin-top: -10px;
+    margin-bottom: 40px;
+    color: #acd1af;
+}
+
+.information > ul {
+    margin-top: -25px;
+    margin-bottom: 10px;
+    color: #acd1af;
+}

@@ -1,0 +1,89 @@
+.experiment {
+    display: inline;
+}
+
+.experiment > p {
+    width: 49%;
+}
+
+.experiment > iframe {
+    width: 49%;
+    height: 280px;
+    margin-top: -350px;
+    margin-left: 50%;
+    border-radius: 11px;
+}
+
+#label_video {
+    margin-left: 50%;
+}
+
+#examples {
+    margin-top: 50px;
+}
+
+.experiment_logo {
+    width: 300px;
+}
+
+.experiment_example {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 70px;
+}
+
+.experiment_example > p {
+    width: 300px;
+}
+
+.launch_btn {
+    position: absolute;
+    width: 300px;
+    margin-left: -300px;
+    margin-top: 100px;
+    background-color: #9ACD32;
+    display: none;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    outline: none;
+}
+
+.preview_btn {
+    position: absolute;
+    width: 300px;
+    margin-left: -300px;
+    margin-top: 170px;
+    background-color: #9ACD32;
+    display: none;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    outline: none;
+}
+
+.launch_btn:hover {
+    background-color: #27a102;
+}
+
+.preview_btn:hover {
+    background-color: #27a102;
+}
+
+.example_name {
+    color: #9ACD32;
+    position: absolute;
+    display: none;
+    margin-left: -300px;
+    margin-top: 0px;
+    font-size: 18px;
+    font-weight: bold;
+}

@@ -1,0 +1,18 @@
+.no_headset {
+    display: inline-block;
+    margin-left: 0;
+    margin-bottom: 20px;
+}
+
+.no_headset figure img {
+    background-color: #9ACD32;
+    width: 8%;
+    border-radius: 11px;
+    margin-right: 20px;
+    border: 3px solid black;
+    float: left;
+}
+
+.no_headset figure figcaption {
+    width: 100%;
+}

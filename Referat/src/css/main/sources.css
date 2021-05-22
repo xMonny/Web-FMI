@@ -1,0 +1,41 @@
+.source {
+    margin-top: -20px;
+}
+
+.source_label {
+    color: #acd1af;
+}
+
+#button_nav {
+    background-color: green;
+    border-radius: 150px;
+    width: 4%;
+    height: 60px;
+    position: absolute;
+    margin-top: -75px;
+    margin-left: 76%;
+    cursor: pointer;
+}
+
+#button_nav:hover {
+    background-color: greenyellow;
+}
+
+#button_nav img {
+    width: 80%;
+    height: 90%;
+}
+
+#author {
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+    color: #9ACD32;
+}
+
+@keyframes colorchange {
+    50% {
+      color: #229200;
+      font-weight: bold;
+    }
+}

@@ -1,0 +1,52 @@
+.tree_view {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tree_view > li > ol {
+    background-color: #003f5a;
+}
+
+.tree_view > li > ul {
+    background-color: #003f5a;
+    list-style-type: square;
+}
+
+.framework_name {
+    color: #9ACD32;
+    font-weight: bold;
+    font-size: 16px;
+}
+  
+.caret {
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    width: 550px;
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+  
+.caret::before {
+    content: "\25B6";
+    color: #9ACD32;
+    display: inline-block;
+    margin-right: 6px;
+
+}
+  
+.caret-down::before {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+  
+.nested {
+    display: none;
+    margin-top: -20px;
+    margin-bottom: 40px;
+}
+  
+.active {
+    display: block;
+}

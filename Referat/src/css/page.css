@@ -1,0 +1,60 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #003f5a;
+}
+
+a {
+    color: #5dfd2d;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+a:hover {
+    color: #4ed325;
+}
+
+label {
+    color: #9ACD32;
+    cursor: text;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+figure {
+    margin: 0;
+}
+
+figcaption {
+    margin-bottom: 10px;
+}
+
+ul {
+    width: 90%;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: white;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+
+

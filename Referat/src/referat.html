@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="bg">
+    <head>
+        <meta charset="UTF-8" />
+
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+
+        <link rel="stylesheet" href="css/page.css" />
+        <link rel="stylesheet" href="css/header.css" />
+        <link rel="stylesheet" href="css/main/class-information.css" />
+        <link rel="stylesheet" href="css/main/tree-view.css" />
+        <link rel="stylesheet" href="css/main/with-headset.css" />
+        <link rel="stylesheet" href="css/main/without-headset.css" />
+        <link rel="stylesheet" href="css/main/animated-planetarium.css" />
+        <link rel="stylesheet" href="css/main/experiments.css" />
+        <link rel="stylesheet" href="css/main/sources.css" />
+        
+        <script defer src="javascript/tree-view.js"></script>
+        <script defer src="javascript/collapsing.js"></script>
+        <script defer src="javascript/hover.js"></script>
+        <script defer src="javascript/sources-nav.js"></script>
+
+        <title>WebVR</title>
+    </head>
+
+    <body>
+        <header>
+            <img id="header_img" alt="Header image" src="img/boyvr.gif" />
+            <h1 id="header_text">Виртуална реалност в уеб</h1>
+        </header>
+
+        <main>
+            <article id="short_description" class="information">
+                <h3>1. Какво е WebVR? <a class="source1-nav what_is_webvr" href="#source1">[1]</a><a class="source2-nav what_is_webvr" href="#source2">[2]</a></h3>
+                <p>
+                    WebVR е експериментален интерфейс за програмиране на приложения на JavaScript (API),
+                    който позволява на приложенията да взаимодействат с устройства за:
+                    <ul>
+                        <li>виртуална реалност като HTC Vive, Oculus Rift, Google Cardboard</li>
+                        <li>виртуална реалност с отворен код (OSVR) в уеб браузър</li>
+                    </ul>
+                    Той е внедрен в браузъри, базирани на Firefox и Chromium. WebVR е отворена
+                    спецификация, която прави възможно преживяването на VR в браузър. Целта е да се улесни
+                    влизането във VR преживяванията независимо от устройството.
+                    Ако VR опитът е достъпен чрез интернет браузър, тогава всеки на практика може да му се наслади.
+                    Някои от бариерите, които пречат на хората да използват виртуална реалност, ще бъдат премахнати,
+                    тъй като няма да е необходимо да се изтеглят тежки приложения или да се купува мощен компютър.
+                    Следователно разработването на WebVR не само прави виртуалната реалност по-достъпна, но и по-евтина.
+                </p>
+            </article>
+
+            <article id="experience" class="information">
+                <h3>2. Как да се потопим в изживяването с WebVR?</h3>
+                <p>
+                    За да изпитате WebVR, са ви необходими две неща: комплект за виртуална реалност (слушалки и очила)
+                    и съвместим браузър.
+                </p>
+                <ul class="tree_view">
+                    <li><article class="caret">Вижте кои са стъпките, за да работи правилно <a class="source2-nav steps" href="#source2">[2]</a></article>
+                        <ol class="nested">
+                            <li>API разпознава VR устройството</li>
+                            <li>След това проверява възможностите на устройството</li>
+                            <li>Проучва позицията си</li>
+                            <li>Предоставя кадрите, които са необходими в зависимост от VR средата</li>
+                        </ol>
+                    </li>
+                </ul>
+
+                <ul class="tree_view">
+                    <li><article class="caret">Кои frameworks може да се използват <a class="source2-nav frameworks" href="#source2">[2]</a></article>
+                        <ul class="nested">
+                            <li><label for="framework_name" class="framework_name">A-Frame</label> - Това е създадено от екипа на Mozilla VR за стартиране на екосистемата WebVR.
+                                Може да се използва от HTML за водене до frameowrk и се представя изключително добре на
+                                различни платформи.</li>
+                            <li><label for="framework_name" class="framework_name">Primrose</label> - Този framework предлага завладяваща среда както за настолни, така и за мобилни
+                                уеб браузъри. Такава среда ще се справи с всички елементарни сценови взаимодействия като
+                                основен потребителски интерфейс за влизане в режим VR.</li>
+                            <li><label for="framework_name" class="framework_name">React VR</label> - Ако искате да създадете VR приложения само с JavaScript, това е
+                                подходящият framework за вас. Дизайнът му е идентичен с React, като по този начин ви позволява да
+                                създадете богата VR среда и потребителски интерфейс от декларативни компоненти.</li>
+                            <li><label for="framework_name" class="framework_name">Babylon.js</label> - Този двигател е базиран на JavaScript и WebGL. Той е отличен за създаване
+                                на игри в 3D и преживявания в HTML 5.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </article>
+
+            <article id="with_headset" class="information">
+                <h3>3. Какво правя, ако имам комплект за виртуална реалност? <a class="source1-nav have_headset" href="#source1">[1]</a></h3>
+                <p>
+                    Разберете кой браузър е подходящ за Вас.
+                </p>
+                <article class="choice">
+                    <button type="button" class="choice_btn">
+                        <img src="img/google_cardboard.png" alt="" class="browser_logo" />
+                        Google Cardboard
+                        <img src="img/down_arrow.png" alt="" class="arrow" />
+                    </button>
+                    <article class="hidden_content">
+                        <p>
+                            Работи най-добре с 
+                            <a href="https://play.google.com/store/apps/details?id=com.android.chrome" target="_blank">Chrome</a>
+                            на устройства с Android.
+                            Все още можете да изпитате съдържание на WebVR в други браузъри
+                            на Android и iOS, но може да не е толкова гладко, тъй като тези браузъри
+                            не поддържат напълно WebVR.
+                        </p>
+                    </article>
+
+                    <button type="button" class="choice_btn">
+                        <img src="img/oculus_rift.png" alt="" class="browser_logo" />
+                        Oculus Rift
+                        <img src="img/down_arrow.png" alt="" class="arrow" />
+                    </button>
+                    <article class="hidden_content">
+                        <p>
+                            Работи с 
+                            <a href="https://webvr.rocks/firefox" target="_blank">Firefox</a>
+                            и
+                            <a href="https://www.supermedium.com" target="_blank">Supermedium</a>
+                            на Windows.
+                        </p>          
+                    </article>
+                </article>
+
+                <article class="choice">
+                    <button type="button" class="choice_btn">
+                        <img src="img/daydream.png" alt="" class="browser_logo" />
+                        DayDream
+                        <img src="img/down_arrow.png" alt="" class="arrow" />
+                    </button>
+                    <article class="hidden_content">
+                        <p>
+                            Работи с
+                            <a href="https://play.google.com/store/apps/details?id=com.android.chrome" target="_blank">Chrome</a>
+                            и
+                            <a href="https://mixedreality.mozilla.org/firefox-reality/" target="_blank">Firefox Reality</a>
+                            устройства с Android, подходящи за Daydream.
+                        </p>               
+                    </article>
+
+                    <button type="button" class="choice_btn">
+                        <img src="img/oculus_go.png" alt="" class="browser_logo" />
+                        Oculus Go
+                        <img src="img/down_arrow.png" alt="" class="arrow" />
+                    </button>
+                    <article class="hidden_content">
+                        <p>
+                            Работи с
+                            <a href="https://www.oculus.com/experiences/gear-vr/1257988667656584/" target="_blank">Oculus Browser</a>
+                            и
+                            <a href="https://mixedreality.mozilla.org/firefox-reality/" target="_blank">Firefox Reality</a>.
+                        </p>
+                    </article>
+                </article>
+
+                <article class="choice">
+                    <button type="button" class="choice_btn">
+                        <img src="img/samsung_gear.png" alt="" class="browser_logo" />
+                        Samsung Gear VR
+                        <img src="img/down_arrow.png" alt="" class="arrow" />
+                    </button>
+                    <article class="hidden_content">
+                        <p>
+                            Работи с
+                            <a href="https://www.oculus.com/experiences/gear-vr/1257988667656584/" target="_blank">Oculus Browser</a>
+                            и
+                            <a href="https://www.oculus.com/experiences/gear-vr/849609821813454/" target="_blank">Samsung Internet</a>.
+                        </p>              
+                    </article>
+
+                    <button type="button" class="choice_btn">
+                        <img src="img/htc_vive.png" alt="" class="browser_logo" />
+                        HTC VIVE
+                        <img src="img/down_arrow.png" alt="" class="arrow" />
+                    </button>
+                    <article class="hidden_content">
+                        <p>
+                            Работи с
+                            <a href="https://webvr.rocks/firefox" target="_blank">Firefox</a>,
+                            <a href="https://webvr.rocks/servo" target="_blank">Servo</a> и
+                            <a href="https://www.supermedium.com/" target="_blank">Supermedium</a>
+                            на Windows. На macOS може да използвате
+                            <a href="https://www.mozilla.org/en-US/firefox/channel/desktop/#nightly" target="_blank">Firefox Nightly</a>.
+                        </p>
+                    </article>
+                </article>
+
+                <article class="choice">
+                    <button type="button" class="choice_btn">
+                        <img src="img/microsoft.png" alt="" class="browser_logo" />
+                        Windows Mixed Reality
+                        <img src="img/down_arrow.png" alt="" class="arrow" />
+                    </button>
+                    <article class="hidden_content">
+                        <p>
+                            <a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/status/webvr/" target="_blank">WebVR v1.1</a>
+                            се поддържа от
+                            <a href="https://docs.microsoft.com/en-us/archive/microsoft-edge/webvr/webvr-with-edge" target="_blank">Microsoft Edge на Windows</a>.
+                            <a href="https://webvr.rocks/firefox" target="_blank">Firefox</a>
+                            и
+                            <a href="https://www.supermedium.com/" target="_blank">Supermedium</a>
+                            също се поддържат със
+                            <a href="https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/using-steamvr-with-windows-mixed-reality" target="_blank">SteamVR</a>.
+                        </p>
+                    </article>
+
+                    <button type="button" class="choice_btn">
+                        <img src="img/viveport.png" alt="" class="browser_logo" />
+                        VIVEPORT
+                        <img src="img/down_arrow.png" alt="" class="arrow" />
+                    </button>
+                    <article class="hidden_content">
+                        <p>
+                            Работи с
+                            <a href="https://mixedreality.mozilla.org/firefox-reality/" target="_blank">Firefox Reality</a>.
+                        </p>           
+                    </article>
+                </article>
+            </article>
+
+            <article id="without_headset" class="information">
+                <h3>4. Какво правя, ако нямам комплект за виртуална реалност? <a class="source1-nav have_not_headset" href="#source1">[1]</a></h3>
+                <article class="no_headset">
+                    <figure>
+                        <img src="img/no_headset_1.png" alt="" />
+                        <figcaption>
+                            Най-лесният начин да започнете е с основен комплект за виртуална реалност като
+                            <a href="https://arvr.google.com/cardboard/" target="_blank">Google Cardboard</a>.
+                            Просто пуснете телефона си и сте готови за работа. Можете също да използвате
+                            телефона си с по-усъвършенстван комплект като
+                            <a href="https://www.samsung.com/global/galaxy/gear-vr/" target="_blank">Samsung Gear VR</a>
+                            и
+                            <a href="https://arvr.google.com/daydream/" target="_blank">Google Daydream</a>.
+                        </figcaption>
+                    </figure>
+                </article>
+
+                <article class="no_headset">
+                    <figure>
+                        <img src="img/no_headset_2.png" alt="" />
+                        <figcaption>
+                            За най-добра производителност и повечето функции можете да използвате VR комплект,
+                            свързан към компютър, като
+                            <a href="https://www.oculus.com/rift/" target="_blank">Oculus Rift</a>
+                            или
+                            <a href="https://www.vive.com/eu/" target="_blank">HTC VIVE</a>.
+                            Той ще позволи по-висока честота
+                            на кадрите, по-високи резолюции и дори ще ви позволи да се разхождате във VR.
+                        </figcaption>
+                    </figure>
+                </article>
+
+                <article class="no_headset">
+                    <figure>
+                        <img src="img/no_headset_3.png" alt="" />
+                        <figcaption>
+                            Или на някои сайтове можете просто да използвате компютъра или телефона си без такъв комплект.
+                            Няма да можете да виждате в 3D или да взаимодействате толкова пълноценно в повечето светове на VR,
+                            но все пак можете да се оглеждате на 360 градуса.
+                        </figcaption>
+                    </figure>
+                </article>
+            </article>
+
+            <article id="examples" class="information">
+                <h3>5. Примери за WebVR <a class="source2-nav examples_webvr" href="#source2">[2]</a></h3>
+                <p>
+                    Въпреки че WebVR не е узрял напълно, компаниите вече са намерили някои интересни приложения за тях.
+                    Един чудесен пример е уебсайтът за виртуална реалност, създаден от
+                    <a href="https://studiozero.co/" target="_blank">Studio Zero</a>,
+                    който отброява до следващата версия на хитовото шоу на Netflix „Stranger Things“. Въпреки че това е
+                    само часовник, който отброява дните и часовете до следващия епизод, виртуалната реалност е създала
+                    завладяващо преживяване. Може да се наслаждавате без слушалки и привлича повече потребители от
+                    очакваното. Ако желаете, може да видите видео за измисления WebVR часовник
+                    <a href="https://www.loom.com/share/21a0f3a6d6d44d79b6cbb04b36980877" target="_blank">тук</a>.
+                </p>
+                <p>
+                    <a href="https://www2.learnbrite.com/" target="_blank">LearnBrite</a>
+                    е създал интересен пример за образователни цели. Това е виртуална класна стая
+                    с капацитет 100 000 души. Може да се използва както за обучение, така и за провеждане на срещи,
+                    презентации. Това е много удобно, защото може да се взаимодейства с всички останали участници в
+                    стаята, въпреки че всички могат да са разпределени на различни места. По този начин се премахва
+                    необходимостта от пътуване, за да се присъства физически на събрание.
+                </p>
+                <p>
+                    Тази информация ни дава представа за това, на което WebVR наистина е способна и как ще добави
+                    завладяващ елемент към ежедневното ни преживяване. Тъй като технологията става все по-напреднала,
+                    се очаква да се видят още по-голям набор от преживявания, който може да бъде и много персонализиран.
+                    Това отваря много възможности за бизнеса да ангажира своите клиенти и да предаде посланието им
+                    по-ефективно. Като цяло това ще означава, че потребителите ще се радват да сърфират в уебсайтове,
+                    предложения за услуги и всякакви други обичайни преживявания.
+                </p>
+            </article>
+
+            <article id="animated_planetarium" class="information">
+                <h3>6. Как да си направим анимиран планетариум? <a class="source3-nav how_to_make_animated_planetarium" href="#source3">[3]</a></h3>
+                <p id="planetarium_description">
+                    Този проект представя начин за създаване на Слънчева система, която да изглежда реалистична с
+                    текстури, анимации и осветление. A-Frame е лесен начин за изграждане на собствени сцени на
+                    WebVR (Web Virtual Reality - Уеб за виртуална реалност). Не е необходимо да се инсталира нещо
+                    и сцените могат да бъдат направени с прост HTML. Проектът има код, който може лесно да се смеси,
+                    за да създаде свои собствени сцени.
+                    Препоръчва се да се използва инспектора на A-Frame - мощен инструмент, който се доставя с A-Frame,
+                    и дава възможност да се изследва и модифицира визуално кода на вашата сцена. Можете да видите
+                    как изглежда анимиран планетариум в уеб на
+                    <a href="#planetarium_gif">Фигура 1</a>
+                    и сцена за създаване на виртуална реалноств уеб на
+                    <a href="#planetarium_scene_img">Фигура 2</a>. Също така може да видите как изглежда и кодът на този проект на
+                    <a href="#code_frame">Код 1</a>.
+                </p>
+
+                <article id="planetarium_gif_article" class="planetarium_figures">
+                    <figure>
+                        <img id="planetarium_gif" alt="Solar system and planets" src="img/planetarium.gif" />
+                        <figcaption id="description_planetarium_gif">
+                            <label for="label_figure1" id="label_figure1">Фигура 1</label>.
+                            Примерен изглед на анимиран планетариум. Кодът зад този пример съдържа компонента A-Frame
+                            Orbit Controls. За да се обиколи около сцената, се използва плъзгане на курсора или сензорния
+                            екран. В повечето мобилни устройства можете да се натисне за увеличиване.
+                            <a class="source3-nav figure1" href="#source3">[3]</a>
+                        </figcaption>
+                    </figure>
+                </article>
+
+                <article id="planetarium_scene_article" class="planetarium_figures">
+                    <figure>
+                        <img id="planetarium_scene_img" alt="Planetarium scene" src="img/planetarium_scene.png" />
+                        <figcaption id="description_planetarium_scene">
+                            <label for="label_figure2" id="label_figure2">Фигура 2</label>.
+                            Сцена за създаване на проекти за уеб виртуална реалност.
+                            <a class="source3-nav figure2" href="#source3">[3]</a>
+                        </figcaption>
+                    </figure>
+                </article>
+
+                <article id="code_description">
+                    <article class="part_code_description">
+                        <p>
+                            <iframe src="https://codepen.io/qajdhdkr-the-vuer/embed/RwKQPMy?editors=1000;default-tab=html" id="code_frame"></iframe>
+                            <label for="label_code1" id="label_code1">Код 1</label>.
+                            Зад осъществяването на анимиран планетариум като виртуална реалност в уеб, разбира се, стои код.
+                            На какъв език мислите, че е написан? По-долу е показан целият код на WebVR анимиран планетариум,
+                            който се състои от един html файл, който от своя страна използва A-frame и допълнителни js файлове.
+                            Бутонът
+                            <label for="label_resutl">Result</label> всъщност показва резултата от кода, който в случая е точно анимиран
+                            планетариум във виртуална реалност в уеб. Може с левия бутон на мишката да се кликне върху него
+                            и да се видят планетите от различен ъгъл, което е и главната идея на този малък проект. Ако желаете да видите
+                            резултата в по-голямо пространство, може да кликнете върху бутона
+                            <label for="label_HTML">HTML</label>, за да скриете кода. Може да използвате левия бутон на мишката, за да
+                            разгледате в подробности. <a class="source3-nav code1" href="#source3">[3]</a>
+                        </p>
+                    </article>
+                    <article class="part_code_description">
+                        <p>
+                            Има множество начини за анимиране в A-Frame. A-Frame съдържа анимации, които могат да се използват
+                            с
+                            <label for="label_a-animation">a-animation</label>.
+                            На
+                            <a href="#code_part2">Код 2</a>
+                            може да видите как Марс се върти:
+                            <figure>
+                                <img src="img/code_part2.png" alt="Code part" id="code_part2" class="code_img_part" />
+                                <figcaption>
+                                    <label id="label_code2">Код 2</label>. Примерен код, който демонстрира завъртане
+                                    на планетата Марс.
+                                    <a class="source3-nav code2" href="#source3">[3]</a>
+                                </figcaption>
+                            </figure>
+                        </p>
+                    </article>
+                    <article class="part_code_description">
+                        <p>
+                            Но този стартер използва
+                            <label for="label_aframe-animation">aframe-animation</label> компонент. Той работи със системата от компоненти на
+                            обекта, а разработчиците на A-Frame казват, че това е бъдещето на анимацията в A-Frame. На
+                            <a href="#code_part3">Код 3</a>
+                            може да видите такъв пример.
+                            <figure>
+                                <img src="img/code_part3.png" alt="Code part" id="code_part3" class="code_img_part" />
+                                <figcaption>
+                                    <label for="label_code3" id="label_code3">Код 3</label>. Примерен код, който демонстрира използване
+                                    на aframe-animation компонент за завъртане на планетата Марс.
+                                    <a class="source3-nav code3" href="#source3">[3]</a>
+                                </figcaption>
+                            </figure>
+                            <ul id="main_attributes" class="tree_view">
+                                <li><article class="caret">Вижте основните атрибути за анимацията <a class="source3-nav atributes" href="#source3">[3]</a></article>
+                                    <ul class="nested">
+                                        <li><label for="atribute_name" class="atribute_name">property</label> - Типът анимация, който искаме като въртене,
+                                            мащабиране (създаване на нещо голямо или малко), цвят (промяна на цвета).</li>
+                                        <li><label for="atribute_name" class="atribute_name">dur</label> - Продължителността на анимацията. По-малко означава
+                                            по-бързо!</li>
+                                        <li><label for="atribute_name" class="atribute_name">from</label> - Координати във формата (x, y, z).</li>
+                                        <li><label for="atribute_name" class="atribute_name">loop</label> - Определя дали да се върти анимацията.</li>
+                                        <li><label for="atribute_name" class="atribute_name">easing</label> - Скоростта на промяна в анимацията във времето.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+                    </article>
+                    <article class="part_code_description">
+                        <p>
+                            За планетариума се използват две основни анимации - завъртане и орбита.
+                            Използват се много пъти и би било доста досадно да се добавят към всяка планета и луна.
+                            Така че може да се използват така наречените миксини (mixines). Те позволяват да се направи
+                            шаблон, който да се използва няколко пъти. Пример за миксин е
+                            <a href="#code_part4">Код 4</a>,
+                            който може да се използва
+                            за оцветяване на всичко червено:
+                            <figure>
+                                <img src="img/code_part4.png" alt="Code part" id="code_part4" class="code_img_part" />
+                                <figcaption>
+                                    <label for="label_code4" id="label_code4">Код 4</label>. Пример за използване на mixin (миксин).
+                                    <a class="source3-nav code4" href="#source3">[3]</a>
+                                </figcaption>
+                            </figure>
+                        </p>
+                    </article>
+                    <article class="part_code_description">
+                        <p>
+                            За да се използва, всичко, което трябва да се направи, е да се използва атрибута mixin с името.
+                            Но какво, ако искаме нещо да е малко по-различно? Винаги можем да го заменим малко, като тук
+                            заместваме продължителността по подразбиране на анимацията, за да направим орбитата малко по-бавна
+                            с animation = "dur: 90000;" (<a href="#code_part5">Код 5</a>)
+                            <figure>
+                                <img src="img/code_part5.png" alt="Code part" id="code_part5" class="code_img_part" />
+                                <figcaption>
+                                    <label for="label_code5" id="label_code5">Код 5</label>. Пример за използване на mixin (миксин)
+                                    с допълнително условие за duration (продължителност).
+                                    <a class="source3-nav code5" href="#source3">[3]</a>
+                                </figcaption>
+                            </figure>
+                        </p>
+                    </article>
+                    <article class="part_code_description">
+                        <p>
+                            Както виждате, ние също обвихме сферата на планетата в нова
+                            <label for="label_a-enitity">a -entity</label>.
+                            Това е така, защото ако просто приложим орбитата към самия Меркурий, ние просто караме Мекурий да
+                            се върти. Трябва да създадем контейнер отвън и да накараме контейнера да се върти. За да го
+                            визуализираме, можем да добавим геометрия и цвят към орбитата и да видим как изглежда
+                            (<a href="#mercury_gif">Фигура 3</a>). Може да видите и <a href="#code_part6">Код 6</a>.
+                            <figure>
+                                <img src="img/mercury_rotate_oribt.gif" alt="Mercury is rotating around its orbit" id="mercury_gif" />
+                                <figcaption>
+                                    <label for="label_figure3" id="label_figure3">Фигура 3</label>. Меркурий се върти около себе си и
+                                    орбитата си.
+                                    <a class="source3-nav figure3" href="#source3">[3]</a>
+                                </figcaption>
+                            </figure>
+                            <figure>
+                                <img src="img/code_part6.png" alt="Code part" id="code_part6" class="code_img_part" />
+                                <figcaption>
+                                    <label for="label_code6" id="label_code6">Код 6</label>. Примерен код, който демонстрира как
+                                    планетата Меркурий се върти около себе си и орбитата си.
+                                    <a class="source3-nav code6" href="#source3">[3]</a>
+                                </figcaption>
+                            </figure>
+                        </p>
+                    </article>
+                    <article class="part_code_description">
+                        <p>
+                            Добавянето на светлина е друг начин да се оживи A-Frame сцената. Всички сцени с A-Frame имат
+                            осветление по подразбиране. Когато се добави собствено осветление, осветлението по подразбиране
+                            изчезва. Така можем да видим осветените планети, обърнати към слънцето. Това е точков тип
+                            осветление. Добавяме специално засенчване на материал =
+                            <label for="shader_flat">"shader: flat;"</label> към слънцето, така че да е
+                            предпазено от осветлението, в противен случай самото слънце не би било осветено.
+                            Но добавяме и малко околно осветление, което осветява цялата сцена. Може да видите на
+                            <a href="#sun_planetarium">Фигура 4</a> какъв е ефектът.
+                            <figure>
+                                <img src="img/sun_planetarium.png" alt="Sun planetarium" id="sun_planetarium" />
+                                <figcaption>
+                                    <label for="label_figure4" id="label_figure4">Фигура 4</label>. Изглед на Слънцето с добавено
+                                    осветление и текстури.
+                                    <a class="source3-nav figure4" href="#source3">[3]</a>
+                                </figcaption>
+                            </figure>
+                        </p>
+                    </article>
+                </article>
+            </article>
+
+            <article id="experiments" class="information">
+                <h3>7. WebVR експерименти <a class="source4-nav experiments_webvr" href="#source4">[4]</a></h3>
+                <article class="experiment">
+                    <p>
+                        Всеки трябва да може да изпита VR, а WebVR е голяма стъпка в тази посока.
+                        Той е отворен за всички браузъри, което улеснява разработчиците да създават
+                        бързо нещо и да го споделят с всички, независимо на какво устройство са.
+                        Web VR донесе виртуална реалност в мрежата, улеснявайки всеки да
+                        създава, да се наслаждава и да споделя VR преживявания. Следващата
+                        фаза на тази еволюция е WebXR, която ще комбинира Web VR и AR в един API.
+                        Докато се извършва преходът, нашите експерименти с уеб VR на живо няма да
+                        бъдат достъпни, но все пак можете да демонстрирате някои от проектите в 360.
+                        На <a href="#experiment_video">Видео 1</a> имате възможност да изгледате кратко
+                        видео за това как уеб виртуалната реалност може да присъства в нашето ежедневие.
+                    </p>
+                </article>
+                <article class="experiment">
+                    <iframe src="https://www.youtube.com/embed/Jzrqrji_2xk" id="experiment_video"></iframe>
+                    <label for="label_video" id="label_video">Видео 1</label>. Използване на уеб
+                    виртуална реалност.
+                    <a class="source4-nav video1" href="#source4">[4]</a>
+                </article>
+
+                <article id="examples">
+                    <p>
+                        По-долу са показани някои примери, с помощта на които може да навлезете в уеб виртуалната
+                        реалност.
+                        <a href="#konterball_logo">Пример 1</a> демонстрира играта тенис на маса, която може да се играе
+                        срещу опонент или срещу стена.
+                        <a href="#dance_tonite_logo">Пример 2</a> показва, че в уеб виртуалната реалност е възможно да
+                        присъства и музиката като компонент.
+                        <a href="#origami_simulator_logo">Пример 3</a> показва различни фигури, които могат да променят
+                        формата си.
+                        Върху всяко изображение имате два бутона -
+                        <label for="label_launch">Launch</label> и <label for="label_preview">Preview</label>.
+                        Бутонът <label for="label_launch">Launch</label> отваря нов прозорец, в който може да тествате
+                        съответния пример. Бутонът <label for="label_preview">Preview</label> отваря нов прозорец, който
+                        съдържа кратка информация за примера, който сте избрали, като съответно имате и опция да видите
+                        какъв код стои зад всеки един от примерите. И за трите примера може да навлезете в уеб виртуалната
+                        реалност, като имате възможността да завъртате прозореца и да наблюдавате от различни ъгли.
+                        <a class="source4-nav example_description" href="#source4">[4]</a>
+                    </p>
+                    <article class="experiment_example">
+                        <p class="logo_container">
+                            <img src="img/konterball_logo.png" alt="Konterball experiment" id="konterball_logo" class="experiment_logo" />
+                            <a href="https://konterball.com/" target="_blank">
+                                <button class="launch_btn">Launch</button>
+                            </a>
+                            <a href="https://experiments.withgoogle.com/konterball" target="_blank">
+                                <button class="preview_btn">Preview</button>
+                            </a>
+                            
+                            <label class="example_name">Konterball</label>
+                        </p>
+
+                        <p>
+                            <label for="label_konterball" id="label_konterball">Пример 1</label>.
+                            Игра "тенис на маса" във VR. Може да играете срещу опонент или стена.
+                            <a class="source4-nav example1" href="#source4">[4]</a>
+                        </p>
+                    </article>
+
+                    <article class="experiment_example">
+                        <p class="logo_container">
+                            <img src="img/dance_tonite_logo.png" alt="Dance Tonite experiment" id="dance_tonite_logo" class="experiment_logo" />
+                            <a href="https://tonite.dance/" target="_blank">
+                                <button class="launch_btn">Launch</button>
+                            </a>
+                            <a href="https://experiments.withgoogle.com/dance-tonite" target="_blank">
+                                <button class="preview_btn">Preview</button>
+                            </a>
+                            <label class="example_name">Dance Tonite</label>
+                        </p>
+                        
+                        <p>
+                            <label for="label_dance_tonite" id="label_dance_tonite">Пример 2</label>.
+                            Във VR присъства и музиката. Чрез този пример може да направите своя експеримент.
+                            <a class="source4-nav example2" href="#source4">[4]</a>
+                        </p>
+                    </article>
+
+                    <article class="experiment_example">
+                        <p class="logo_container">
+                            <img src="img/origami_simulator_logo.png" alt="Origami simulator experiment" id="origami_simulator_logo" class="experiment_logo" />
+                            <a href="https://origamisimulator.org/" target="_blank">
+                                <button class="launch_btn">Launch</button>
+                            </a>
+                            <a href="https://experiments.withgoogle.com/origami-simulator" target="_blank">
+                                <button class="preview_btn">Preview</button>
+                            </a>
+                            <label class="example_name">Origami Simulator</label>
+                        </p>
+                        
+                        <p>
+                            <label for="label_origami_simulator" id="label_origami_simulator">Пример 3</label>.
+                            В WebVR проверете как произволни модели на оригами ще се сгънат в 3D.
+                            <a class="source4-nav example3" href="#source4">[4]</a>
+                        </p>
+                    </article>
+                </article>
+            </article>
+
+            <article id="sources" class="information">
+                <h3>8. Използвана литература</h3>
+                <p id="source1" class="source">
+                    <label for="label_source1" class="source_label" id="source1_label">[1]</label> Информационен сайт "webvr.info"
+                    [<a href="https://webvr.info/" target="_blank">https://webvr.info/</a>],
+                    последно посетен на 09.04.2021 г.
+                </p>
+                <p id="source2" class="source">
+                    <label for="label_source2" class="source_label" id="source2_label">[2]</label> Tracy Watson, "What is WebVR and how to use it", публикувано на 18.07.2019 г.,
+                    [<a href="https://skywell.software/blog/what-is-webvr-and-how-to-use-it/" target="_blank">
+                    https://skywell.software/blog/what-is-webvr-and-how-to-use-it/</a>],
+                    последно посетен на 10.04.2021 г.
+                </p>
+                <p id="source3" class="source">
+                    <label for="label_source3" class="source_label" id="source3_label">[3]</label> Project starter-aframe-animated, "WebVR Starter Kit: Make Your Own Animated Planetarium",
+                    [<a href="https://glitch.com/edit/#!/starter-aframe-animated?path=README.md%3A1%3A0" target="_blank">
+                    https://glitch.com/edit/#!/starter-aframe-animated?path=README.md%3A1%3A0</a>],
+                    последно посетен на 11.04.2021 г.
+                </p>
+                <p id="source4" class="source">
+                    <label for="label_source4" class="source_label" id="source4_label">[4]</label> Google experiments, "WebVR Collection",
+                    [<a href="https://experiments.withgoogle.com/collection/webvr" target="_blank">
+                    https://experiments.withgoogle.com/collection/webvr</a>],
+                    последно посетен на 12.04.2021 г.
+                </p>
+                <button type="button" id="button_nav">
+                    <img src="img/arrow_nav.png" alt="" />
+                </button>
+                <p id="author">
+                    Създадено от: Симона Любенова, 62258
+                </p>
+            </article>
+        </main>
+    </body>
+</html>
